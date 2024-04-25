@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:numerology_app/views/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,60 +11,163 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Numerology App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomeView(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
 
-  final String title;
+// import 'package:flutter/material.dart';
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+// void main() {
+//   runApp(MyApp());
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Numerology(),
+//     );
+//   }
+// }
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+// class Numerology extends StatefulWidget {
+//   @override
+//   _NumerologyState createState() => _NumerologyState();
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
+// class _NumerologyState extends State<Numerology> {
+//   String lifePathNumber = "3";
+//   String luckyNumbers = "1, 3, 4, 10";
+//   String luckyColors = "Blue, Gray";
+//   String luckyDays = "Sunday, Saturday";
+//   String luckyGemstones = "Diamond, Coral, Pearl";
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Numerology'),
+//       ),
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 Container(
+//                   width: 50,
+//                   child: TextField(
+//                     controller: TextEditingController(text: lifePathNumber),
+//                     onChanged: (value) =>
+//                         setState(() => lifePathNumber = value),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 ),
+//                 Text(" "),
+//                 Container(
+//                   width: 50,
+//                   child: TextField(
+//                     controller: TextEditingController(text: lifePathNumber),
+//                     onChanged: (value) =>
+//                         setState(() => lifePathNumber = value),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text("Life Path Number"),
+//                 TextButton(
+//                   onPressed: () => {},
+//                   child: Text("Info"),
+//                 ),
+//               ],
+//             ),
+//             Divider(),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text("Lucky Numbers"),
+//                 TextButton(
+//                   onPressed: () => {},
+//                   child: Text("Info"),
+//                 ),
+//               ],
+//             ),
+//             TextField(
+//               controller: TextEditingController(text: luckyNumbers),
+//               onChanged: (value) => setState(() => luckyNumbers = value),
+//               decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//               ),
+//             ),
+//             Divider(),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text("Lucky Colors"),
+//                 TextButton(
+//                   onPressed: () => {},
+//                   child: Text("Info"),
+//                 ),
+//               ],
+//             ),
+//             TextField(
+//               controller: TextEditingController(text: luckyColors),
+//               onChanged: (value) => setState(() => luckyColors = value),
+//               decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//               ),
+//             ),
+//             Divider(),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text("Lucky Days"),
+//                 TextButton(
+//                   onPressed: () => {},
+//                   child: Text("Info"),
+//                 ),
+//               ],
+//             ),
+//             TextField(
+//               controller: TextEditingController(text: luckyDays),
+//               onChanged: (value) => setState(() => luckyDays = value),
+//               decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//               ),
+//             ),
+//             Divider(),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text("Lucky Gemstones"),
+//                 TextButton(
+//                   onPressed: () => {},
+//                   child: Text("Info"),
+//                 ),
+//               ],
+//             ),
+//             TextField(
+//               controller: TextEditingController(text: luckyGemstones),
+//               onChanged: (value) => setState(() => luckyGemstones = value),
+//               decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
